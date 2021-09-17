@@ -1,4 +1,4 @@
-from skill import Attr, Cost, Stat, Group
+from stats import Attr, Cost, Stat, Group
 
 common = [
     Stat("Hitpoints", [Attr.NONE, Attr.NONE, Attr.NONE], Cost.RES, Group.RES, 10),

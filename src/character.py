@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from skill import PlayerClass, Stat
+from stats import PlayerClass, Stat
 
 @dataclass
 class Character:

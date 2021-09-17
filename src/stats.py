@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import math
 
 from enum import IntEnum, Enum, auto
@@ -40,28 +39,31 @@ class Stat:
     group: int
     minimum: int
     value: int = field(init=False)
-    cost: int = 0
+    cost: int = field(init=False)
+    total_xp_used: int = field(init=False)
 
     def __post_init__(self):
+        self.total_xp_used = 0
         self.value = self.minimum
 
-    def __increase_value(self):
-        pass
+    def set_base_cost(self, char_class):
+        self.cost = self.__change_cost(0, char_class)
+        self.total_xp_used = 0
 
-    def __decrease_value(self):
-        pass
+    def __change_value(self, modifier):
+        self.value += modifier
 
-    def __increase_cost(self):
-        pass
-
-    def __decrease_cost(self):
-        pass
-
-    def increase(self, current: int, char_class: PlayerClass):
-        nr = current - self.minimum + 1 + 5
+    def __change_cost(self, modifier: int, char_class: PlayerClass):
+        nr = self.value + modifier - self.minimum + 1 + 5
         multi = 4 if char_class == PlayerClass.SEYAN else 1
         return math.floor(nr * nr * nr * int(self.skill_type) * multi / 10)
 
-    def decrease(self):
-        pass
+    def increase(self, char_class: PlayerClass):
+        self.total_xp_used += self.cost
+        self.__change_value(1)
+        self.cost = self.__change_cost(0, char_class)
 
+    def decrease(self, char_class: PlayerClass):
+        self.cost = self.__change_cost(-1,char_class)
+        self.total_xp_used -= self.cost
+        self.__change_value(-1)
