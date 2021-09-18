@@ -38,6 +38,7 @@ class Stat:
     skill_type: Cost
     group: int
     minimum: int
+    mod: int = field(init=False)
     value: int = field(init=False)
     cost: int = field(init=False)
     total_xp_used: int = field(init=False)
