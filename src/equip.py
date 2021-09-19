@@ -1,5 +1,5 @@
 from enum import Enum, auto
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 class EquipSlot(Enum):
     RING1 = auto()
@@ -22,6 +22,21 @@ class WeaponType(Enum):
     GLOVE = auto()
 
 @dataclass
+class ItemStat:
+    name: str
+    value: int
+
+@dataclass
+class Item:
+    slot: EquipSlot
+    modifiers: list[ItemStat]
+    base_stat: str = field(init=False)
+    value: int = field(init=False)
+
+    def __post_init__(self, requires: int = 0):
+        if self.slot == EquipSlot.WEAPON:
+
+@dataclass
 class Equipment:
     slot: EquipSlot
     type: str
@@ -33,3 +48,6 @@ class Equipment:
 
     def __post_init__(self):
         self.base_stat
+
+@dataclass
+class Loadout:
