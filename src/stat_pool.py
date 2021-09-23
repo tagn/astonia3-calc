@@ -29,8 +29,12 @@ warrior = [
     Stat("Parry", [Attr.INT, Attr.AGI, Attr.STR], Cost.SKILL, Group.SECONDARY, 1),
     Stat("Warcry", [Attr.INT, Attr.AGI, Attr.STR], Cost.SKILL, Group.SECONDARY, 1),
     Stat("Tactics", [Attr.INT, Attr.AGI, Attr.STR], Cost.SKILL, Group.SECONDARY, 1),
-    Stat("Surround Hit", [Attr.INT, Attr.AGI, Attr.STR], Cost.SKILL, Group.SECONDARY, 1),
-    Stat("Body Control", [Attr.INT, Attr.AGI, Attr.STR], Cost.SKILL, Group.SECONDARY, 1),
+    Stat(
+        "Surround Hit", [Attr.INT, Attr.AGI, Attr.STR], Cost.SKILL, Group.SECONDARY, 1
+    ),
+    Stat(
+        "Body Control", [Attr.INT, Attr.AGI, Attr.STR], Cost.SKILL, Group.SECONDARY, 1
+    ),
     Stat("Speed Skill", [Attr.INT, Attr.AGI, Attr.STR], Cost.SKILL, Group.SECONDARY, 1),
     Stat("Regeneration", [Attr.STR, Attr.STR, Attr.STR], Cost.SKILL, Group.TERTIARY, 1),
 ]
@@ -41,7 +45,9 @@ mage = [
     Stat("Bless", [Attr.INT, Attr.INT, Attr.WIS], Cost.SKILL, Group.SECONDARY, 1),
     Stat("Heal", [Attr.INT, Attr.INT, Attr.WIS], Cost.SKILL, Group.SECONDARY, 1),
     Stat("Freeze", [Attr.INT, Attr.INT, Attr.WIS], Cost.SKILL, Group.SECONDARY, 1),
-    Stat("Magic Shield", [Attr.INT, Attr.INT, Attr.WIS], Cost.SKILL, Group.SECONDARY, 1),
+    Stat(
+        "Magic Shield", [Attr.INT, Attr.INT, Attr.WIS], Cost.SKILL, Group.SECONDARY, 1
+    ),
     Stat("Lightning", [Attr.INT, Attr.INT, Attr.WIS], Cost.SKILL, Group.SECONDARY, 1),
     Stat("Fire", [Attr.INT, Attr.INT, Attr.WIS], Cost.SKILL, Group.SECONDARY, 1),
     Stat("Meditate", [Attr.WIS, Attr.WIS, Attr.WIS], Cost.SKILL, Group.TERTIARY, 1),
